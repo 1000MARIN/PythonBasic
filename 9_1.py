@@ -31,7 +31,7 @@
 # attack(tank2_name, "1시", tank2_damage)
 
 class Unit:
-    def __init__(self, name, hp, damage) -> None:
+    def __init__(self, name, hp, damage) :
         self.name = name
         self.hp = hp
         self.damege = damage
