@@ -20,7 +20,7 @@ class AttackUnit:
         self.damage = damage
 
     def attack(self, location):
-        print("{0} : {1} 방향으로 적군을 공격 합니다. [공격력 {2}".format(self.name, location, self.damage))
+        print("{0} : {1} 방향으로 적군을 공격 합니다. [공격력 {2}]".format(self.name, location, self.damage))
 
     def damaged(self, damage):
         print("{0} : {1} 데미지를 입었습니다.".format(self.name, damage))
@@ -33,6 +33,6 @@ class AttackUnit:
 firebat1 = AttackUnit("파이어뱃", 50, 16)
 firebat1.attack("5시")
 
-# 공격 2번 받는다고가정
-firebat1.damage(25)
-firebat1.damage(25)
+# 공격을 2번 받는다고 가정
+firebat1.damaged(25)
+firebat1.damaged(25)
