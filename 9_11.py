@@ -35,7 +35,7 @@ class AttackUnit(Unit): # Unit 상속
         print("{0} : {1} 방향으로 적군을 공격 합니다. [공격력 {2}]".format(self.name, location, self.damage))
 
 # 마린
-class Marine(AttackUnit):
+class Marine(AttackUnit): # AttackUnit 상속
     def __init__(self):
         AttackUnit.__init__(self, "마린", 40, 1, 5)
 
@@ -48,7 +48,7 @@ class Marine(AttackUnit):
             print("{0} : 체력이 부족하여 스팀팩을 사용하지 않습니다.".format(self.name))
 
 # 탱크
-class Tank(AttackUnit):
+class Tank(AttackUnit): # AttackUnit 상속
     # 시즈모드 : 탱크를 지상에 고정시켜, 더 높은 파워로 공격 가능. 이동 불가.
     seize_developed = False # 시즈모드 개발여부
 
@@ -80,7 +80,7 @@ class Flyable:
         print("{0} : {1} 방향으로 날아갑니다. [속도 {2}]".format(name, location, self.flying_speed))
 
 # 공중 공격 유닛 클래스
-class FlyableAttackUnit(AttackUnit, Flyable):
+class FlyableAttackUnit(AttackUnit, Flyable): # AttackUnit, Flyable 상속
     def __init__(self, name, hp, damage, flying_speed):
         AttackUnit.__init__(self, name, hp, 0, damage) # 지상 speed 0
         Flyable.__init__(self, flying_speed)
@@ -89,7 +89,7 @@ class FlyableAttackUnit(AttackUnit, Flyable):
         self.fly(self.name, location)
 
 # 레이스
-class Wraith(FlyableAttackUnit):
+class Wraith(FlyableAttackUnit): # FlyableAttackUnit 상속
     def __init__(self):
         FlyableAttackUnit.__init__(self, "레이스", 80, 20, 5) 
         self.clocked = False    # 클로킹 모드 (해제 상태)
